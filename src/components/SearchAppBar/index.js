@@ -8,6 +8,7 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import {withRouter} from 'react-router-dom';
+import StyledMenu from '../StyledMenu'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -71,14 +72,9 @@ const SearchAppBar = (props) => {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
+          <StyledMenu className={classes.menuButton}>
+          </StyledMenu>
+
           <Typography className={classes.title} variant="h6" noWrap>
             Noticias
           </Typography>
