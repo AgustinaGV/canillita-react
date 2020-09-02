@@ -8,6 +8,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+import CustomizedSnackbars from '../CustomizedSnackbars'
+
 const useStyles = makeStyles({
   root: {
     maxWidth: 1200,
@@ -31,7 +33,7 @@ export default function ImgMediaCard(props) {
 
   return (
     <Card className={classes.root}>
-      <a target="_blank" href={url}>
+      
       <CardActionArea>
         <CardMedia
           component="img"
@@ -50,14 +52,21 @@ export default function ImgMediaCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
+        <a target="_blank" href={url}>
+          <Button size="small" color="primary">
+            Leer más
+          </Button>
+        </a>
         <Button size="small" color="primary">
           Compartir
         </Button>
-        <Button size="small" color="primary">
-          Leer más
+
+        <Button>
+          <CustomizedSnackbars />
         </Button>
+
       </CardActions>
-      </a>
+      
     </Card>
   );
 }
