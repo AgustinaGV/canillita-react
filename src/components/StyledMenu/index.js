@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
@@ -8,6 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import SendIcon from '@material-ui/icons/Send';
+import { Link } from 'react-router-dom'
 
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -44,7 +45,7 @@ const StyledMenuItem = withStyles((theme) => ({
 }))(MenuItem);
 
 export default function CustomizedMenus() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -74,22 +75,34 @@ export default function CustomizedMenus() {
         onClose={handleClose}
       >
         <StyledMenuItem>
-          <ListItemIcon>
-            <SendIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText primary="Opc 1" />
+          <Link to="/"> 
+            <ListItemText primary="Home" />
+            </Link>
         </StyledMenuItem>
         <StyledMenuItem>
-          <ListItemIcon>
-            <DraftsIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText primary="Opc 2" />
+          <Link to="/category/politica"> 
+            <ListItemText primary="Política" />
+           </Link>
         </StyledMenuItem>
         <StyledMenuItem>
-          <ListItemIcon>
-            <InboxIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText primary="Opc 3" />
+          <Link to="/category/internacionales">
+            <ListItemText primary="Internacionales" />
+          </Link>
+        </StyledMenuItem>
+        <StyledMenuItem>
+          <Link to="/category/tecnologia">
+            <ListItemText primary="Tecnología" />
+          </Link>
+        </StyledMenuItem>
+        <StyledMenuItem>
+          <Link to="/category/espectaculos">
+            <ListItemText primary="Espectaculos" />
+          </Link>
+        </StyledMenuItem>
+        <StyledMenuItem>
+          <Link to="/category/deportes">
+            <ListItemText primary="Deportes" />
+          </Link>
         </StyledMenuItem>
       </StyledMenu>
     </div>

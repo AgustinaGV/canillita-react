@@ -9,6 +9,8 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 import CustomizedSnackbars from '../CustomizedSnackbars'
+import TwitterIcon from '@material-ui/icons/Twitter';
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 
 const useStyles = makeStyles({
   root: {
@@ -35,10 +37,11 @@ export default function ImgMediaCard(props) {
     <Card className={classes.root}>
       
       <CardActionArea>
-        <CardMedia
+        <a target="_blank" href={url}>
+          <CardMedia
           component="img"
           alt={title}
-          height="140"
+          height="250"
           image={img}
           title={title}
         />
@@ -49,16 +52,21 @@ export default function ImgMediaCard(props) {
           <Typography variant="body2" color="textSecondary" component="p">
             {title}
           </Typography>
-        </CardContent>
+          </CardContent>
+        </a>
       </CardActionArea>
       <CardActions>
-        <a target="_blank" href={url}>
+        
           <Button size="small" color="primary">
-            Leer más
+            ?
           </Button>
-        </a>
+        
         <Button size="small" color="primary">
-          Compartir
+          <a target="_blank" href={`http://twitter.com/share?text=${title}&url=${url}`}><TwitterIcon color="primary"/></a>
+        </Button>
+
+        <Button size="small" color="primary">
+          <a target="_blank" href={`https://api.whatsapp.com/send?text=${url}`}><WhatsAppIcon color="primary"/></a>
         </Button>
 
         <Button>
