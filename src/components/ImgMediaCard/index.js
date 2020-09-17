@@ -66,10 +66,6 @@ export default function ImgMediaCard(props) {
           <a target="_blank" href={`https://api.whatsapp.com/send?text=${url}`}><WhatsAppIcon color="primary"/></a>
         </Button>
 
-        <Button size="small" color="primary">
-            <EmojiPeopleIcon />
-        </Button>
-
         <Button>
           <CustomizedSnackbars />
         </Button>
