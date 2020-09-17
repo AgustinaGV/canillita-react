@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams, useLocation } from 'react-router-dom'
 import Layout from '../containers/Layout'
 import FullWidthGrid from '../components/FullWidthGrid'
+import GridSkeleton from '../components/GridSkeleton'
 import axios from 'axios'
 
 const Category = () => {
@@ -37,7 +38,7 @@ const Category = () => {
 
     return (
         <Layout loading={loading}>
-            { !loading ? <FullWidthGrid data={news} /> : 'LOADING...'} 
+            { !loading ? <FullWidthGrid data={news} /> : <GridSkeleton/>} 
         </Layout>
     )
 }

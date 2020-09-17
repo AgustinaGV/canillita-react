@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SearchAppBar = (props) => {
+const SearchAppBar = ({props, diaDeHoy2}) => {
   const classes = useStyles();
 
   return (
@@ -76,7 +76,7 @@ const SearchAppBar = (props) => {
           </StyledMenu>
 
           <Typography className={classes.title} variant="h6" noWrap>
-            Noticias
+            Noticias del {diaDeHoy2}
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>

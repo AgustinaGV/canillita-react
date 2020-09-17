@@ -4,7 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
 
-const Layout = ({children, loading}) => {
+const Layout = ({children, loading, diaDeHoy2}) => {
+  
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -17,7 +18,7 @@ const Layout = ({children, loading}) => {
 
     return (
         <div>
-            <SearchAppBar/>
+            <SearchAppBar diaDeHoy2={diaDeHoy2}/>
             {loading && <LinearProgress color="secondary" />}
             <div className="inner">
                 {children}

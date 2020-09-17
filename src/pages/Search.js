@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams, useLocation } from 'react-router-dom'
 import Layout from '../containers/Layout'
 import FullWidthGrid from '../components/FullWidthGrid'
+import GridSkeleton from '../components/GridSkeleton'
 import axios from 'axios'
 
 const Search = (props) => {
@@ -28,7 +29,7 @@ const Search = (props) => {
 
     return (
         <Layout loading={loading}>
-            { !loading ? news.length !== 0 && query !== "" ? <FullWidthGrid data={news} /> : 'no hay noticias amiwi' : 'LOADING...'} 
+            { !loading ? news.length !== 0 && query !== "" ? <FullWidthGrid data={news} /> : 'No hay noticias amiwi' : <GridSkeleton/>} 
         </Layout>
     )
 }
