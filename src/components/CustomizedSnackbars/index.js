@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 
+
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -38,7 +39,7 @@ export default function CustomizedSnackbars() {
   return (
     <div className={classes.root}>
 
-    <FavoriteBorderIcon size="small" color="primary"  onClick={handleClick}/>
+    <FavoriteBorderIcon size="small" onClick={handleClick}/>
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success">
           Wow qué interesante

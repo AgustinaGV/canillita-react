@@ -13,7 +13,7 @@ const Home = () => {
     const [loading, setLoading] = useState(true) //loading para que, hasta que cargue la data, muestre el loading;
     const fecha = new Date;
     const diaDeHoy = dayjs(fecha).locale('es').format('YYYY-MM-DD');
-    const diaDeHoy2 = dayjs(fecha).locale('es').format('DD-MM-YYYY');
+    const diaDeHoy2 = dayjs(fecha).locale('es').format('DD.MM.YY');
     useEffect(() => {
         const fetchData = async () => {
             try {

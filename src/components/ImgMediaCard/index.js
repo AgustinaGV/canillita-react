@@ -11,7 +11,8 @@ import Typography from '@material-ui/core/Typography';
 import CustomizedSnackbars from '../CustomizedSnackbars'
 import TwitterIcon from '@material-ui/icons/Twitter';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
-import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
+import Tooltip from '../Tooltip'
+
 
 const useStyles = makeStyles({
   root: {
@@ -34,15 +35,16 @@ export default function ImgMediaCard(props) {
   const classes = useStyles();
   const img = img_url ? img_url : '/estevanez.jpg' // warning importante por si no trae bien img;
 
+
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} className="popper">
       
       <CardActionArea>
         <a target="_blank" href={url}>
           <CardMedia
           component="img"
           alt={title}
-          height="250"
+          height="300"
           image={img}
           title={title}
         />
@@ -58,18 +60,21 @@ export default function ImgMediaCard(props) {
       </CardActionArea>
       <CardActions>
         
-        <Button size="small" color="primary">
-          <a target="_blank" href={`http://twitter.com/share?text=${title}&url=${url}`}><TwitterIcon color="primary"/></a>
+        <Button size="small">
+          <a target="_blank" href={`http://twitter.com/share?text=${title}&url=${url}`}><TwitterIcon/></a>
         </Button>
 
-        <Button size="small" color="primary">
-          <a target="_blank" href={`https://api.whatsapp.com/send?text=${url}`}><WhatsAppIcon color="primary"/></a>
+        <Button size="small">
+          <a target="_blank" href={`https://api.whatsapp.com/send?text=${url}`}><WhatsAppIcon /></a>
+        </Button>
+
+        <Button size="small">
+          <Tooltip />
         </Button>
 
         <Button>
           <CustomizedSnackbars />
         </Button>
-
       </CardActions>
       
     </Card>
